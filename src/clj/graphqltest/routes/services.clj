@@ -68,7 +68,7 @@
        (ok {:user user}))
 
   (context "/api" []
-    :tags ["graphql"]
+    :tags ["thingie"]
 
     (GET "/" []
       :tags ["graphql"]
@@ -82,10 +82,7 @@
     (POST "/" [:as {body :body}]
       :tags ["graphql"]
       :summary "entry point for GraphiQL queries"
-      (ok (execute-request (slurp body) nil))))
-
-  (context "/api" []
-    :tags ["thingie"]
+      (ok (execute-request (slurp body) nil)))
 
     (GET "/plus" []
       :return       Long
